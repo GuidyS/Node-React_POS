@@ -1,0 +1,212 @@
+/* --- วาง CSS ที่คุณให้มาในนี้เลย --- */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap');
+
+:root{
+    --primary-color: #8a5a44;
+    --text-color: #ffffff;
+    --border-color: #ffffff;
+    --seconary-color:#694e4e;
+}
+
+/* ตั้งค่าเริ่มต้นสำหรับทุกองค์ประกอบ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', 'Prompt', sans-serif;
+}
+
+/* สีพื้นหลังโทนกาแฟ และจัดตำแหน่งให้อยู่กลางหน้าจอ */
+body {
+    background: linear-gradient(135deg, #6f4e37 0%, #4b2d1b 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* กล่องหลักที่ห่อหุ้มทุกองค์ประกอบ */
+.Wrapper {
+    background: linear-gradient(45deg, rgba(210, 166, 124, 1) 100%, rgba(255, 255, 255, 1) 32%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ส่วนของโลโก้ */
+.Logo {
+    margin-bottom: 25px;
+    border-radius: 20%;
+}
+
+.Logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.Logo img:hover {
+    transform: scale(1.05);
+}
+
+/* หัวข้อ "เข้าสู่ระบบ" */
+.Login {
+    margin-bottom: 30px;
+}
+
+.Login header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #3a2618;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.Login header::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #6f4e37;
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
+}
+
+/* กล่องข้อมูลนำเข้า */
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    padding-left: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input-field:focus {
+    border-color: #6f4e37;
+    box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.2);
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: #aaa;
+}
+
+/* ปุ่มเข้าสู่ระบบ */
+.input-submit {
+    margin-top: 10px;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #6f4e37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+  background-color: #5a3d2a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries เพื่อรองรับการแสดงผลในอุปกรณ์ต่างๆ */
+@media screen and (max-width: 480px) {
+    .Wrapper {
+        width: 90%;
+        height: 550px;
+        padding: 30px;
+    }
+    
+    .Login header {
+        font-size: 24px;
+    }
+    
+    .input-field {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* เพิ่มรองรับแท็บเล็ต */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .Wrapper {
+        width: 70%;
+        height: 650px;
+    }
+}
+
+/* สำหรับหน้าจอทัชสกรีน (แบบ POS) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .Wrapper {
+        width: 400px;
+        height: 680px;
+        padding: 50px;
+    }
+    
+    .input-field {
+        padding: 18px;
+        font-size: 18px;
+    }
+    
+    .Logo img {
+        width: 180px;
+    }
+}
