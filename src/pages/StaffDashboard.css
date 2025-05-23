@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Share+Tech&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, #fff7e6 0%, #f5e0c3 100%);
+    font-family: 'Prompt', sans-serif;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.Sidebar {
+  background: linear-gradient(45deg, rgba(210, 166, 124, 1) 32%, rgba(255, 255, 255, 1) 100%);
+  color: #2d1c0a;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px 0 8px;
+  z-index: 100;
+  box-shadow: 2px 0 12px rgba(45, 28, 10, 0.15);
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .Sidebar {
+    width: 60px;
+    padding: 8px 4px 0 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .Sidebar {
+    width: 48px;
+    padding: 4px 2px 0 2px;
+  }
+}
+
+/* Content area styling */
+.ant-layout {
+    min-height: 100vh;
+    background: transparent;
+    margin-left: 220px;
+}
+
+@media (max-width: 992px) {
+  .ant-layout {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ant-layout {
+    margin-left: 48px;
+  }
+}
+
+/* Custom StaffDashboard classes */
+.staff-dashboard-layout {
+  margin-left: 220px;
+  min-height: 100vh;
+  background: transparent;
+}
+
+@media (max-width: 992px) {
+  .staff-dashboard-layout {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .staff-dashboard-layout {
+    margin-left: 48px;
+  }
+}
+
+.staff-dashboard-header {
+  background: transparent;
+  min-height: 64px;
+}
+
+.staff-dashboard-content {
+  padding: 0;
+  background: transparent;
+}

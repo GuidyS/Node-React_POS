@@ -1,0 +1,49 @@
+.ant-menu {
+  background: transparent !important;
+  color: #2d1c0a !important;
+  border-inline-end: none !important;
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.05rem;
+  box-shadow: none;
+}
+
+.ant-menu-item, .ant-menu-submenu-title {
+  font-family: 'Prompt', sans-serif;
+  color: #2d1c0a !important;
+  border-radius: 8px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ant-menu-item-selected, .ant-menu-item-active, .ant-menu-submenu-selected {
+  background: rgba(210, 166, 124, 0.18) !important;
+  color: #b97a2a !important;
+}
+
+.ant-menu-item:hover, .ant-menu-submenu-title:hover {
+  border: 1px solid #00BFFF;
+  background-color: rgba(0, 191, 255, 0.08) !important;
+  color: #00BFFF !important;
+}
+
+.Menu-bar {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .Menu-bar {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .ant-menu-item, .ant-menu-submenu-title {
+    margin: 0 2px;
+    font-size: 0.9rem;
+    padding: 0 8px !important;
+  }
+}
